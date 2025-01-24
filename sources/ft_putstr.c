@@ -6,11 +6,13 @@
 /*   By: lesescob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:00:59 by lesescob          #+#    #+#             */
-/*   Updated: 2025/01/24 18:23:25 by lesescob         ###   ########.fr       */
+/*   Updated: 2025/01/24 18:46:15 by lesescob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <unistd.h>
+#include <stdio.h>
 
 size_t ft_putstr(char *str)
 {
@@ -29,4 +31,14 @@ size_t ft_putstr(char *str)
 }
 
 int main()
+{
+	char str1[] = "hola";
+	char *str2 = NULL;
+	char str3[] = "123 uno!";
 
+	printf(" ,lun:%zu\n", ft_putstr(str1));
+	printf(" ,lun:%zu\n", ft_putstr(str2));
+	printf(" ,lung:%zu\n", ft_putstr(str3));
+
+	return (0);
+}
