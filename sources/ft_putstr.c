@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: lesescob <lesescob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:00:59 by lesescob          #+#    #+#             */
-/*   Updated: 2025/01/28 11:45:17 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/28 19:30:09 by lesescob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ size_t ft_putstr(char *str)
 	i = 0;
 	if (!str)
 	{
-		write(1, "(nill)", 6)
-			return (6);
+		write(1, "(nil)", 5);
+		return (5);
 	}
 	while (str[i] != '\0')
 		i++;

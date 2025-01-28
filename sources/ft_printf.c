@@ -6,11 +6,14 @@
 /*   By: lesescob <lesescob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:34:49 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/22 18:03:04 by lesescob         ###   ########.fr       */
+/*   Updated: 2025/01/28 19:24:39 by lesescob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int ft_change()
+
 
 int ft_printf(const char *operator, ...)
 {
@@ -26,16 +29,16 @@ int ft_printf(const char *operator, ...)
 
 	while (operator[i])
 	{
-		if (operator[i] == '%')
+		if (operator[i] == '%' && operator[i + 1])
 		{
-			count += ft_change(args, operator[i + 1]);
+			if (operator[i + 1] == '%')
+				count += write(1, "%", 1);
+			else
+				count += ft_change(args, operator[i + 1]);
 			i++;
 		}
 		else
-		{
-			write(1, &operator[i], 1);
-			count;
-		}
+			count += write(1, &operator[i], 1);
 		i++;
 	}
 
@@ -49,4 +52,7 @@ int ft_printf(const char *operator, ...)
 
 //va_start: inicializar la lista de argumentos
 //el ciclo: recorre la cadena caracter por caracter
-//if/si encuentra % llamamos la funcion
+//if/si encuentra % y hay un caracter despues
+//if: caso especial '%%' imprime uno solo, escribe '%' en el output
+//else: llamamos la funcion ft_change para manejar el operador (%c, %s, %d, etc)
+//else: si no es '%', simplemente
