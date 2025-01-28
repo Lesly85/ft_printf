@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lesescob <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:00:59 by lesescob          #+#    #+#             */
-/*   Updated: 2025/01/24 18:46:15 by lesescob         ###   ########.fr       */
+/*   Updated: 2025/01/28 11:45:17 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <unistd.h>
-#include <stdio.h>
 
 size_t ft_putstr(char *str)
 {
@@ -30,7 +28,7 @@ size_t ft_putstr(char *str)
 	return (i);
 }
 
-int main()
+/*int main()
 {
 	char str1[] = "hola";
 	char *str2 = NULL;
@@ -41,4 +39,4 @@ int main()
 	printf(" ,lung:%zu\n", ft_putstr(str3));
 
 	return (0);
-}
+}*/
