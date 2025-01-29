@@ -6,7 +6,7 @@
 /*   By: lesescob <lesescob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:34:49 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/29 19:12:06 by lesescob         ###   ########.fr       */
+/*   Updated: 2025/01/29 20:04:45 by lesescob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	ft_change(va_list args, char operator)
 		counter += ft_putchar(va_arg(args, int));
 	else if (operator)
 }
+
 int	ft_printf(const char *operator, ...)
 {
 	va_list args;
@@ -51,10 +52,4 @@ int	ft_printf(const char *operator, ...)
 //count: contador total de caracteres impresos
 //va_start*: inicializar la lista de argumentos
 //el ciclo: recorre la cadena caracter por caracter y hace el control de % al final
-//if/si encuentra % y hay un caracter despues
-//if: caso especial '%%' imprime uno solo, escribe '%' en el output
-//else: llamamos la funcion ft_change para manejar el operador (%c, %s, %d, etc)
-//else: si no es '%', simplemente imprimimos el caracter actual con write
-//i++: avanza al proximo caractere de la cadena
-//va_end*: cerramos la lista de argumentos variables
-//return(count): devolvemos el numero totale de caracteres impresos
+
