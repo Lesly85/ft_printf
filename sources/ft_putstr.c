@@ -6,13 +6,13 @@
 /*   By: lesescob <lesescob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:00:59 by lesescob          #+#    #+#             */
-/*   Updated: 2025/01/28 19:30:09 by lesescob         ###   ########.fr       */
+/*   Updated: 2025/01/29 17:05:06 by lesescob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t ft_putstr(char *str)
+size_t	ft_putstr(char *str)
 {
 	size_t	i;
 
