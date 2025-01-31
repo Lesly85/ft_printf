@@ -6,7 +6,7 @@
 /*   By: lesescob <lesescob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:00:59 by lesescob          #+#    #+#             */
-/*   Updated: 2025/01/29 17:05:06 by lesescob         ###   ########.fr       */
+/*   Updated: 2025/01/30 17:00:35 by lesescob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_putstr(char *str)
 	}
 	while (str[i] != '\0')
 		i++;
-	write(1, s, i);
+	write(1, str, i);
 	return (i);
 }
 

@@ -5,28 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lesescob <lesescob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 19:34:49 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/29 20:04:45 by lesescob         ###   ########.fr       */
+/*   Created: 2025/01/31 18:26:30 by lesescob          #+#    #+#             */
+/*   Updated: 2025/01/31 18:33:37 by lesescob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_change(va_list args, char operator)
+int	ft_change(va_list args, char formato)
 {
 	int	counter;
 
 	counter = 0;
-	if (operator == 'c')
+	if (formato == 'c')
 		counter += ft_putchar(va_arg(args, int));
-	else if (operator)
+	else if (formato == 's')
+		counter += ft_putstr(va_arg(args, char *));
+	else if (formato == 'd' || formato == 'i')
+		counter += ft_putnumb(va_arg(args, int));
+	else if (formato == 'u')
+		counter += ft_unsigned(va_arg(args, unsigned int));
+	/*else if (formato == 'p')
+		counter += ft_putptr(va_arg(args, void *));
+	else if (formato == 'x')
+		counter += ft_puthexa(va_arg(args, unsigned int), 0);
+	else if (formato == 'X')
+		counter += ft_puthexa(va_arg(args, unsigned int), 1);
+	else if (formato == '%')
+		counter += ft_putchar('%');*/
+	return (counter);
 }
 
 int	ft_printf(const char *operator, ...)
 {
-	va_list args;
-	int	count;
-	int	i;
+	va_list	args;
+	int		count;
+	int		i;
 
 	count = 0;
 	i = 0;
@@ -36,7 +50,7 @@ int	ft_printf(const char *operator, ...)
 		if (operator[i] == '%' && operator[i + 1])
 		{
 			i++;
-			count += ft_change(&args, operator[i]);
+			count += ft_change(args, operator[i]);
 		}
 		else
 			count += write(1, &operator[i], 1);
