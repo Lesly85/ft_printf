@@ -6,7 +6,7 @@
 /*   By: leslyescobar <leslyescobar@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:26:30 by lesescob          #+#    #+#             */
-/*   Updated: 2025/02/03 05:06:56 by leslyescoba      ###   ########.fr       */
+/*   Updated: 2025/02/03 05:15:16 by leslyescoba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_printf(const char *operator, ...)
 	va_start(args, operator);
 	while (operator[i])
 	{
-		if (operator[i] == '%' && operator[i + 1])
+		if (operator[i] == '%')
 		{
 			i++;
 			count += ft_change(args, operator[i]);
