@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lesescob <lesescob@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leslyescobar <leslyescobar@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:26:30 by lesescob          #+#    #+#             */
-/*   Updated: 2025/01/31 18:33:37 by lesescob         ###   ########.fr       */
+/*   Updated: 2025/02/03 03:30:33 by leslyescoba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ int	ft_change(va_list args, char formato)
 		counter += ft_putnumb(va_arg(args, int));
 	else if (formato == 'u')
 		counter += ft_unsigned(va_arg(args, unsigned int));
-	/*else if (formato == 'p')
+	else if (formato == 'p')
 		counter += ft_putptr(va_arg(args, void *));
 	else if (formato == 'x')
-		counter += ft_puthexa(va_arg(args, unsigned int), 0);
+		counter += ft_puthexa(va_arg(args, unsigned int));
 	else if (formato == 'X')
-		counter += ft_puthexa(va_arg(args, unsigned int), 1);
+		counter += ft_puthexa(va_arg(args, unsigned int));
 	else if (formato == '%')
-		counter += ft_putchar('%');*/
+		counter += ft_putchar('%');
 	return (counter);
 }
 
