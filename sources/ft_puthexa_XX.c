@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_puthexa_XX.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leslyescobar <leslyescobar@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 17:00:59 by lesescob          #+#    #+#             */
-/*   Updated: 2025/02/03 05:04:28 by leslyescoba      ###   ########.fr       */
+/*   Created: 2025/02/03 04:20:10 by leslyescoba       #+#    #+#             */
+/*   Updated: 2025/02/03 04:21:48 by leslyescoba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_putstr(char *str)
+int	ft_puthexa_XX(unsigned long n)
 {
-	size_t	i;
+	int		counter;
+	char	*base;
+	char	digit;
 
-	i = 0;
-	if (!str)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	while (str[i] != '\0')
-		i++;
-	write(1, str, i);
-	return (i);
+	base = "0123456789ABCDEF";
+	counter = 0;
+	if (n >= 16)
+		counter += ft_puthexa_XX(n / 16);
+	digit = base[n % 16];
+	counter += ft_putchar(digit);
+	return (counter);
 }
-
-/*int main()
-{
-	char str1[] = "hola";
-	char *str2 = NULL;
-	char str3[] = "123 uno!";
-
-	printf(" ,lun:%zu\n", ft_putstr(str1));
-	printf(" ,lun:%zu\n", ft_putstr(str2));
-	printf(" ,lung:%zu\n", ft_putstr(str3));
-
-	return (0);
-}*/
