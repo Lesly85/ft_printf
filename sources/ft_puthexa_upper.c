@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthexa_x.c                                     :+:      :+:    :+:   */
+/*   ft_puthexa_upper.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lesescob <lesescob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 04:14:32 by leslyescoba       #+#    #+#             */
-/*   Updated: 2025/02/04 17:44:07 by lesescob         ###   ########.fr       */
+/*   Created: 2025/02/03 04:20:10 by leslyescoba       #+#    #+#             */
+/*   Updated: 2025/02/04 17:42:45 by lesescob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-#include "ft_printf.h"
-
-int	ft_puthexa_x(unsigned long n)
+int	ft_puthexa_upper(unsigned long num)
 {
 	int		counter;
 	char	*base;
 	char	digit;
 
-	base = "0123456789abcdef";
+	base = "0123456789ABCDEF";
 	counter = 0;
-	if (n >= 16)
-		counter += ft_puthexa_x(n / 16);
-	digit = base[n % 16];
+	if (num >= 16)
+		counter += ft_puthexa_upper(num / 16);
+	digit = base[num % 16];
 	counter += ft_putchar(digit);
 	return (counter);
 }
+
 /*explicacion codigo:
 variables:
 counter: cuenta quantos caracteres se imprimen

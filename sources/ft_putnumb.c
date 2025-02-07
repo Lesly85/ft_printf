@@ -6,7 +6,7 @@
 /*   By: lesescob <lesescob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:23:27 by lesescob          #+#    #+#             */
-/*   Updated: 2025/01/30 20:49:49 by lesescob         ###   ########.fr       */
+/*   Updated: 2025/02/04 14:49:39 by lesescob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_putnumb(int n)
 
 	numb = n;
 	counter = 0;
-	if(numb < 0)
+	if (numb < 0)
 	{
 		counter += ft_putchar('-');
 		numb = -numb;

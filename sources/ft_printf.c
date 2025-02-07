@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leslyescobar <leslyescobar@student.42.f    +#+  +:+       +#+        */
+/*   By: lesescob <lesescob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:26:30 by lesescob          #+#    #+#             */
-/*   Updated: 2025/02/03 05:15:16 by leslyescoba      ###   ########.fr       */
+/*   Updated: 2025/02/04 15:25:44 by lesescob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ int	ft_change(va_list args, char formato)
 	else if (formato == 'x')
 		counter += ft_puthexa_x(va_arg(args, unsigned int));
 	else if (formato == 'X')
-		counter += ft_puthexa_XX(va_arg(args, unsigned int));
+		counter += ft_puthexa_upper(va_arg(args, unsigned int));
 	else if (formato == '%')
 		counter += ft_putchar('%');
 	return (counter);
 }
 
-int	ft_printf(const char *operator, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	args;
 	int		count;
@@ -44,23 +44,23 @@ int	ft_printf(const char *operator, ...)
 
 	count = 0;
 	i = 0;
-	va_start(args, operator);
-	while (operator[i])
+	va_start(args, str);
+	while (str[i])
 	{
-		if (operator[i] == '%')
+		if (str[i] == '%')
 		{
 			i++;
-			count += ft_change(args, operator[i]);
+			count += ft_change(args, str[i]);
 		}
 		else
-			count += write(1, &operator[i], 1);
+			count += write(1, &str[i], 1);
 		i++;
 	}
 	va_end(args);
 	return (count);
 }
 
-#include "ft_printf.h"
+/*#include "ft_printf.h"
 #include <stdio.h> // Para comparar con printf original
 
 int	main(void)
@@ -72,10 +72,14 @@ int	main(void)
 	char	*null_str = NULL;
 	void	*ptr = &num;
 	void	*null_ptr = NULL;
+	int	count = 0;
 
 	// Prueba con caracteres
-	ft_printf("1. Caracter: %c\n", c);
-	printf("1. Caracter: %c\n", c);
+	count = ft_printf("1. Caracter: %c\n", c);
+	ft_printf("count = %d\n", count);
+	count = printf("1. Caracter: %c\n", c);
+	ft_printf("count = %d\n", count);
+
 
 	// Prueba con strings
 	ft_printf("2. String: %s\n", str);
@@ -116,9 +120,9 @@ int	main(void)
 	printf("11. Porcentaje: %%\n");
 
 	// Prueba con combinaciones
-	ft_printf("12. Combinado: Char %c, String %s, Número %d, Hex %x, Puntero %p\n",
+	ft_printf("12. mix: Char %c, String %s, Número %d, Hex %x, Puntero %p\n",
 		c, str, num, 255, ptr);
-	printf("12. Combinado: Char %c, String %s, Número %d, Hex %x, Puntero %p\n",
+	printf("12. mix: Char %c, String %s, Número %d, Hex %x, Puntero %p\n",
 		c, str, num, 255, ptr);
 
 	return (0);
@@ -129,7 +133,6 @@ int	main(void)
 //i: iterador
 //count: contador total de caracteres impresos
 //va_start*: inicializar la lista de argumentos
-//el ciclo: recorre la cadena caracter por caracter y hace el control de % al final
+//el ciclo: recorre la cadena caracter por caracter
 
-//gcc -Wall -Wextra -Werror -Iincludes sources/ft_printf.c sources/libftprintf.a
-// -o test_printf
+//gcc -Wall -Wextra -Werror -Iincludes libftprintf.a*/
