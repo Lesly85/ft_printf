@@ -6,7 +6,7 @@
 /*   By: lesescob <lesescob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:26:30 by lesescob          #+#    #+#             */
-/*   Updated: 2025/02/04 15:25:44 by lesescob         ###   ########.fr       */
+/*   Updated: 2025/02/06 19:21:06 by lesescob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_printf(const char *str, ...)
 	count = 0;
 	i = 0;
 	va_start(args, str);
-	while (str[i])
+	while (str[i] != '\0')
 	{
 		if (str[i] == '%')
 		{

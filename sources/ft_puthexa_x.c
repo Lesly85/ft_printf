@@ -6,11 +6,9 @@
 /*   By: lesescob <lesescob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 04:14:32 by leslyescoba       #+#    #+#             */
-/*   Updated: 2025/02/04 17:44:07 by lesescob         ###   ########.fr       */
+/*   Updated: 2025/02/06 14:43:08 by lesescob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ft_printf.h"
 
 #include "ft_printf.h"
 
